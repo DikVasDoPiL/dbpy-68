@@ -13,20 +13,20 @@ create table if not exists Artists (
 create table if not exists Albums (
 	id serial primary key,
 	name varchar(60) not null,
-	date date not null check (date >= '1900-1-1' and date <= current_date)
+	date date check (date >= '1900-1-1' and date <= current_date)
 );
 
 create table if not exists Collections (
 	id serial primary key,
 	name varchar(60) not null,
-	date date not null check (date >= '1900-1-1' and date <= current_date)
+	date date check (date >= '1900-1-1' and date <= current_date)
 );
 
 create table if not exists Tracks (
 	id serial primary key,
 	name varchar(60) not null,
 	length integer not null,
-	date date not null check (date >= '1900-1-1' and date <= current_date),
+	date date check (date >= '1900-1-1' and date <= current_date),
 	Albums_Id integer references Albums(id) not null
 );
 
