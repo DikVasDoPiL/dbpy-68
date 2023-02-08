@@ -53,8 +53,11 @@ select ar.name from artists as ar
 -- 9.    название альбомов, содержащих наименьшее количество треков.
 select al.name from albums as al
 	full join tracks as tr on al.id = tr.albums_id
---	where al.id in ()
-;
+	group by al.name
+	having count(tr.id) = (select nc.count from (select al.name, count(tr.id) from albums as al
+		full join tracks as tr on al.id = tr.albums_id
+		group by al.name) as nc
+	order by nc.count limit 1) ;
 
 
 
