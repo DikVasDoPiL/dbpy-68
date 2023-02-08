@@ -1,11 +1,13 @@
 create table if not exists Genres (
 	id serial primary key,
-	name varchar(60) not null
+	name varchar(60) not null,
+	unique (name)
 );
 
 create table if not exists Artists (
 	id serial primary key,
-	name varchar(60) not null
+	name varchar(60) not null,
+	unique (name)
 );
 
 create table if not exists Albums (
