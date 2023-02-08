@@ -54,10 +54,9 @@ select ar.name from artists as ar
 select al.name from albums as al
 	full join tracks as tr on al.id = tr.albums_id
 	group by al.name
-	having count(tr.id) = (select nc.count from (select al.name, count(tr.id) from albums as al
+	having count(tr.id) = (select count(tr.id) from albums as al
 		full join tracks as tr on al.id = tr.albums_id
-		group by al.name) as nc
-	order by nc.count limit 1) ;
+		group by al.name order by count(tr.id) limit 1);
 
 
 
