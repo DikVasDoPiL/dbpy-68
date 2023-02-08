@@ -20,9 +20,9 @@ insert into Artists (name) VALUES ('LASCALA');
 
 --Создание альбомов
 insert into Albums (name, date) 
-    VALUES ('Black', '2022-01-01');
+    VALUES ('Black', '2019-01-01');
 insert into Albums (name, date) 
-    VALUES ('White', '2023-01-01');
+    VALUES ('White', '2020-01-01');
 insert into Albums (name, date) 
     VALUES ('Red', '2022-01-01');
 insert into Albums (name, date) 
@@ -64,17 +64,17 @@ insert into Tracks (name, length, date, Albums_Id)
 insert into Tracks (name, length, date, Albums_Id) 
     VALUES ('Welcome to Sothci', 120, '2022-02-01', 2);
 insert into Tracks (name, length, date, Albums_Id) 
-    VALUES ('No name park', 130, '2022-02-01', 1);
+    VALUES ('No name park', 130, '2022-02-01', 6);
 insert into Tracks (name, length, date, Albums_Id) 
-    VALUES ('Die on the moon', 64, '2022-01-01', 1);
+    VALUES ('Die on the moon', 64, '2022-01-01', 5);
 insert into Tracks (name, length, date, Albums_Id) 
-    VALUES ('lie me now', 321, '2022-02-01', 2);
+    VALUES ('lie me now', 321, '2022-02-01', 7);
 insert into Tracks (name, length, date, Albums_Id) 
-    VALUES ('Greate Wall', 811, '2022-02-01', 1);
+    VALUES ('Greate Wall', 811, '2022-02-01', 8);
 insert into Tracks (name, length, date, Albums_Id) 
-    VALUES ('Summer song', 210, '2022-01-01', 1);
+    VALUES ('Summer song', 210, '2022-01-01', 9);
 insert into Tracks (name, length, date, Albums_Id) 
-    VALUES ('Need for duty free', 188, '2022-02-01', 2);
+    VALUES ('Need for duty free', 188, '2022-02-01', 10);
 insert into Tracks (name, length, date, Albums_Id) 
     VALUES ('Generates', 200, '2022-02-01', 1);
 insert into Tracks (name, length, date, Albums_Id) 
@@ -83,14 +83,40 @@ insert into Tracks (name, length, date, Albums_Id)
     VALUES ('Ты мой поросёнок', 202, '1992-02-05', 4);
 
 --Создание связей
-insert into GenresArtists VALUES (1, 2);
-insert into GenresArtists VALUES (2, 1);
-insert into GenresArtists VALUES (2, 2);
+insert into GenresArtists(artist_id, genre_id) VALUES (1, 2);
+insert into GenresArtists(artist_id, genre_id) VALUES (2, 1);
+insert into GenresArtists(artist_id, genre_id) VALUES (2, 2);
+insert into GenresArtists(artist_id, genre_id) VALUES (2, 5);
+insert into GenresArtists(artist_id, genre_id) VALUES (4, 4);
+insert into GenresArtists(artist_id, genre_id) VALUES (5, 6);
+insert into GenresArtists(artist_id, genre_id) VALUES (6, 3);
+insert into GenresArtists(artist_id, genre_id) VALUES (7, 2);
+insert into GenresArtists(artist_id, genre_id) VALUES (8, 2);
 
-insert into AlbumsArtists VALUES (1, 1);
-insert into AlbumsArtists VALUES (1, 2);
-insert into AlbumsArtists VALUES (2, 2);
+insert into AlbumsArtists(album_id, artist_id) VALUES (1, 1);
+insert into AlbumsArtists(album_id, artist_id) VALUES (1, 2);
+insert into AlbumsArtists(album_id, artist_id) VALUES (2, 2);
+insert into AlbumsArtists(album_id, artist_id) VALUES (3, 8);
+insert into AlbumsArtists(album_id, artist_id) VALUES (4, 7);
+insert into AlbumsArtists(album_id, artist_id) VALUES (5, 6);
+insert into AlbumsArtists(album_id, artist_id) VALUES (6, 5);
+insert into AlbumsArtists(album_id, artist_id) VALUES (7, 4);
+insert into AlbumsArtists(album_id, artist_id) VALUES (8, 3);
+insert into AlbumsArtists(album_id, artist_id) VALUES (9, 10);
+insert into AlbumsArtists(album_id, artist_id) VALUES (10, 9);
 
-insert into trackscollections VALUES (1, 1);
-insert into trackscollections VALUES (1, 2);
-insert into trackscollections VALUES (2, 2);
+insert into trackscollections(track_id, collection_id) VALUES (1, 1);
+insert into trackscollections(track_id, collection_id) VALUES (1, 2);
+insert into trackscollections(track_id, collection_id) VALUES (2, 4);
+insert into trackscollections(track_id, collection_id) VALUES (3, 4);
+insert into trackscollections(track_id, collection_id) VALUES (4, 5);
+insert into trackscollections(track_id, collection_id) VALUES (5, 6);
+insert into trackscollections(track_id, collection_id) VALUES (6, 8);
+insert into trackscollections(track_id, collection_id) VALUES (7, 8);
+insert into trackscollections(track_id, collection_id) VALUES (8, 5);
+insert into trackscollections(track_id, collection_id) VALUES (9, 3);
+insert into trackscollections(track_id, collection_id) VALUES (10, 4);
+insert into trackscollections(track_id, collection_id) VALUES (10, 5);
+insert into trackscollections(track_id, collection_id) VALUES (8, 7);
+insert into trackscollections(track_id, collection_id) VALUES (7, 6);
+insert into trackscollections(track_id, collection_id) VALUES (9, 8);
